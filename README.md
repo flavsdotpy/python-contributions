@@ -1,4 +1,3 @@
-
 # python-snippets
 
 Snippets of Python sample code I've created during my Dev life.
