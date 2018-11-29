@@ -7,6 +7,10 @@ Snippets of Python sample code I've created during my Dev life.
 Each folder contains one or more different snippets, meant for a lot of different stuff.
 Feel free to grab them and use them in your works.
 
+Complete list:
+
+* [es-scrolling-query](./es-scrolling-query) - Scrolling query elasticsearch, with a page size of 1000 records (configurable).
+
 ### Prerequisites
 
 * Python 3.6
