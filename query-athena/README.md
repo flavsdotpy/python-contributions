@@ -1,7 +1,6 @@
-# external-s3-json-configuration
+# query-athena
 
-Parse a configuration json directly from AWS S3 to a dictionary.
-This is meant for when you have some kind of configuration that requires a lot of changing, simply put it in the cloud and add this snippet to the code.
+Query AWS Athena and download results as a list of dictionaries.
 
 ## Built with
 
