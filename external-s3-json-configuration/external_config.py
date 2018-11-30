@@ -15,6 +15,3 @@ except Exception as e:
     decoded_body = '{}'
 
 configuration = json.loads(decoded_body)
-
-for source in configuration.get('AthenaSources', []):
-    print(source)
