@@ -1,6 +1,6 @@
 # es-scrolling-query
 
-Snippets to read/write csv files from/to list of dictionaries
+Read/write csv files from/to list of dictionaries.
 
 ## Authors
 

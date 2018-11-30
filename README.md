@@ -10,6 +10,8 @@ Feel free to grab them and use them in your works.
 Complete list:
 
 * [es-scrolling-query](./es-scrolling-query) - Scrolling query elasticsearch, with a page size of 1000 records (configurable).
+* [read-write-csv](./read-write-csv) - Read/write csv files from/to list of dictionaries
+* [external-s3-json-configuration](./external-s3-json-configuration) - Parse a configuration json directly from s3 to a dictionary
 
 ### Prerequisites
 

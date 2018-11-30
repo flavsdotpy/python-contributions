@@ -1,12 +1,11 @@
 import requests
 import json
 
-# HOST LIKE: 'http://localhost/'
-ES_HOST = ''
+
+ES_HOST = 'http://ap3xx-es.com'
 ES_FIRST_SCROLL_URI = f'{ES_HOST}/index/_search?scroll=2m'
 ES_SCROLL_URI = f'{ES_HOST}/_search/scroll'
 
-file_list = []
 count=0
 
 # Query payload
@@ -50,4 +49,4 @@ while len(records) > 0:
         scroll_response = requests.post(ES_SCROLL_URI, json=scroll_payload)
         records, scroll_id = parse_response(scroll_response.json())
     
-print(f'Finished search with {len(file_list)} records found!')
+print(f'Finished search with {count} records found!')

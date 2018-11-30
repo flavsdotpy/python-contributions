@@ -1,0 +1,16 @@
+{
+    "AthenaSources": [
+        {
+            "glueDatabase": "default",
+            "table": "cloudtrail_logs"
+        },
+        {
+            "glueDatabase": "datalake",
+            "table": "customers"
+        },
+        {
+            "glueDatabase": "datalake",
+            "table": "transactions"
+        }
+    ]
+}

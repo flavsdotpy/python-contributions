@@ -1,6 +1,6 @@
 import csv
 
-CSV_PATH = './output/test.csv'
+CSV_PATH = './output/sample.csv'
 
 DICTS = [
     {

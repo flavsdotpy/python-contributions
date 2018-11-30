@@ -1,6 +1,6 @@
 import csv
 
-CSV_PATH = 'input/test.csv'
+CSV_PATH = 'input/sample.csv'
 
 
 with open(CSV_PATH) as f:

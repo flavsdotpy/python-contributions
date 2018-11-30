@@ -1,6 +1,6 @@
 # es-scrolling-query
 
-Scrolling query elasticsearch, with a page size of 1000 records (configurable)
+Scrolling query elasticsearch, with a page size of 1000 records (configurable).
 
 ## Built with
 
