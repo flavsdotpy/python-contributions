@@ -15,6 +15,7 @@ KEY_PAIR = 'key-pair'
 MASTER_TYPE = 'm4.large'
 SLAVE_TYPE = 'r5.2xlarge'
 SLAVE_NODES = 2
+## REFER TO https://docs.google.com/spreadsheets/d/1vD_XA5CEbZVhwCgFQbi0yUsbUFHPqv1JDoJhaiIWrHw
 SPARK_CONFIG = {
     'spark.executor.instances': '29',
     'spark.yarn.executor.memoryOverhead': '3072',
