@@ -2,10 +2,14 @@ import time
 import sys
 from watchdog.observers import Observer  
 from watchdog.events import PatternMatchingEventHandler
+from subprocess import Popen, PIPE
 import logging
+from datetime import datetime
 
 
 LOGGER = None
+PROCESSED_FILES = set()
+
 
 
 def config_log():
@@ -14,7 +18,7 @@ def config_log():
         LOGGER = logging.getLogger()
         LOGGER.setLevel(logging.INFO)
 
-        handler = logging.StreamHandler(sys.stdout)
+        handler = logging.StreamHandler()
         handler.setLevel(logging.INFO)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
@@ -22,11 +26,23 @@ def config_log():
 
 
 class MyHandler(PatternMatchingEventHandler):
-    patterns = ["*"]
+    patterns = ["*.csv"]
 
     def process(self, event):
-        #DO LOGIC HERE
-        LOGGER.info(event)
+        ROOT = '/home/farma_admin/data/integracao_banco/'
+
+        LOGGER.info('Event identified!')
+        if not event.is_directory and event.src_path not in PROCESSED_FILES:
+            if 'cadastro_loja/lojas_' in event.src_path:
+                LOGGER.info('Event is from cadastro_loja...')
+                task = Popen(["/usr/bin/python3", ROOT + "lojas_main.py"], stdout=PIPE, stderr=PIPE)
+                LOGGER.info(task)
+                PROCESSED_FILES.add(event.src_path)
+            elif 'cadastro_produto/produtos_' in event.src_path:
+                LOGGER.info('Event is from cadastro_produto')
+                task = Popen(["/usr/bin/python3", ROOT + "produtos_main.py"], stdout=PIPE, stderr=PIPE)
+                LOGGER.info(task)
+                PROCESSED_FILES.add(event.src_path)
 
     def on_created(self, event):
         self.process(event)
@@ -37,9 +53,8 @@ class MyHandler(PatternMatchingEventHandler):
 
 if __name__ == '__main__':
     config_log()
-
     LOGGER.info('Initiating configuration...')
-    path = './input'
+    path = '.'
     observer = Observer()
     handler = MyHandler()
 
@@ -50,6 +65,9 @@ if __name__ == '__main__':
     LOGGER.info('Listening {}..'.format(path))
     try:
         while True:
+            now = datetime.now()
+            if now.strftime('%S') == '0':
+                PROCESSED_FILES.clear()
             time.sleep(1)
     except KeyboardInterrupt:
         observer.stop()
