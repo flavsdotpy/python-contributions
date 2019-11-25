@@ -7,12 +7,21 @@ Snippets of Python sample code I've created during my Dev life.
 Each folder contains one or more different snippets, meant for a lot of different stuff.
 Feel free to grab them and use them in your works.
 
-Complete list:
+### AWS Stuff
 
-* [es-scrolling-query](./es-scrolling-query) - Scrolling query elasticsearch, with a page size of 1000 records (configurable).
-* [read-write-csv](./read-write-csv) - Read/write csv files from/to list of dictionaries
-* [external-s3-json-configuration](./external-s3-json-configuration) - Parse a configuration json directly from AWS S3 to a dictionary
-* [query-athena](./query-athena) - Query AWS Athena and download results as a list of dictionaries
+* [external-s3-json-configuration](./aws/external-s3-json-configuration) - Parse a configuration json directly from AWS S3 into a dictionary object.
+* [query-athena](./aws/query-athena) - Query AWS Athena and download results as a list of dictionaries.
+* [deploy-emr](./aws/deploy-emr) - Deploy EMR with refined configuration and bootstrap script, using Boto3.
+
+### Data Bases
+
+* [es-scrolling-query](./dbs/es-scrolling-query) - Scrolling query elasticsearch, with a page size of 1000 records (configurable).
+
+### Files
+
+* [read-write-csv](./files/read-write-csv) - Read/write csv files from/to list of dictionaries.
+* [hotfolder](./files/hotfolder) - Process files as soon as they are saved within a folder.
+
 
 ### Prerequisites
 

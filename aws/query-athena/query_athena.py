@@ -1,7 +1,7 @@
-from time import sleep
-import boto3
 import csv
+from time import sleep
 
+import boto3
 
 GLUE_DATABASE = 'ap3xx_datalake'
 QUERY_OUTPUT_BUCKET = 'ap3xx-queries'
@@ -28,14 +28,13 @@ def athena_check_query_status(athena_client, query_id, wait_time=180, check_step
             state = query_status['QueryExecution']['Status']['State']
             if state == 'SUCCESS':
                 return True
-                count = wait_time
             elif state == 'FAILED':
                 return False
-                count = wait_time
             else:
                 sleep(check_step)
                 count += 1
-            return False
+                
+        return False
     except Exception as e:
         print(e)
         return False
@@ -52,7 +51,7 @@ if query_id and athena_check_query_status(athena_client, query_id):
         obj = s3_resource.Object(QUERY_OUTPUT_BUCKET, f'{GLUE_DATABASE}/{query_id}.csv')
         buffer = obj.get()["Body"].read().decode()
         obj_list = buffer.replace('"', '').splitlines()
-        result = list(csv.DictWriter(obj_list))
+        result = [row for row in csv.DictReader(obj_list)]
         ## DO
         ## LOGIC
         ## HERE
@@ -61,6 +60,3 @@ if query_id and athena_check_query_status(athena_client, query_id):
 else:
     print('Something happened and the query was not executed')
     print('It may be still executing in this moment...')
-
-
-    
