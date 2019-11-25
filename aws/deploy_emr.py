@@ -2,8 +2,8 @@ import boto3
 
 
 #PATH VARS
-SCRIPT_FILE = 'example.py'
-BOOTSTRAP_FILE = 'example.sh'
+SCRIPT_FILE = 'emr_example.py'
+BOOTSTRAP_FILE = 'emr_boostrap.sh'
 S3_BUCKET = 'package-bucket'
 LOCAL_RESOURCES = './resources/'
 S3_PREFIX = 'emr/'

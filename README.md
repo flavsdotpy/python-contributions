@@ -7,26 +7,16 @@ Snippets of Python sample code I've created during my Dev life.
 Each folder contains one or more different snippets, meant for a lot of different stuff.
 Feel free to grab them and use them in your works.
 
-### AWS Stuff
-
-* [external-s3-json-configuration](./aws/external-s3-json-configuration) - Parse a configuration json directly from AWS S3 into a dictionary object.
-* [query-athena](./aws/query-athena) - Query AWS Athena and download results as a list of dictionaries.
-* [deploy-emr](./aws/deploy-emr) - Deploy EMR with refined configuration and bootstrap script, using Boto3.
-
-### Data Bases
-
-* [es-scrolling-query](./dbs/es-scrolling-query) - Scrolling query elasticsearch, with a page size of 1000 records (configurable).
-
-### Files
-
-* [read-write-csv](./files/read-write-csv) - Read/write csv files from/to list of dictionaries.
-* [hotfolder](./files/hotfolder) - Process files as soon as they are saved within a folder.
-
+* [AWS](./aws)
+* [Databases](./dbs)
+* [Date/Datetime](./datetime)
+* [Files](./files)
+* [Spark](./spark)
 
 ### Prerequisites
 
 * Python 3.6
-* The required lib (if needed) inside each `requirements.txt` file
+* If required, the script will contain a comment section for required python packages.
 
 ### Installing
 

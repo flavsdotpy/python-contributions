@@ -1,3 +1,7 @@
+# Requires:
+#
+# watchdog
+
 import time
 from datetime import datetime
 
@@ -23,7 +27,7 @@ class HotfolderHandler(PatternMatchingEventHandler):
     def on_modified(self, event):
         self.process(event)
 
-
+# This also counts with a duplication safe strategy
 if __name__ == '__main__':
     print('Initiating configuration...')
     path = '.'
