@@ -7,6 +7,7 @@ Snippets of Python sample code I've created during my Dev life.
 Each folder contains one or more different snippets, meant for a lot of different stuff.
 Feel free to grab them and use them in your works.
 
+* [Airflow](./airflow)
 * [AWS](./aws)
 * [Databases](./dbs)
 * [Date/Datetime](./datetime)
