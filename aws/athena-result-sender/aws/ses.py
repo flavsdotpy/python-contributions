@@ -19,7 +19,7 @@ def send_mail(destination_email, file_download_path):
         },
         Message={
             'Subject': {
-                'Data': 'Resultado de query pronto!'
+                'Data': 'Query result is ready!'
             },
             'Body': {
                 'Text': {
