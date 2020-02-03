@@ -4,7 +4,7 @@ AWS = {
 
 SES = {
     'base_message': """
-        Caro {name},
+        Dear {name},
         
         Your query result is ready to download at: {file_path}
         
