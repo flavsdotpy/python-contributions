@@ -13,6 +13,7 @@ Feel free to grab them and use them in your works.
 * [Date/Datetime](./datetime)
 * [Files](./files)
 * [Spark](./spark)
+* [Ambari](./ambari)
 
 ### Prerequisites
 
